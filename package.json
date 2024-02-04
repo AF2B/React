@@ -8,7 +8,13 @@
     "test:watch": "npm test -- --watch",
     "test:staged": "npm test -- --findRelatedTest",
     "test:ci": "npm test -- --coverage",
-    "lint": "eslint ."
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "pre-commit": [
     "lint",
