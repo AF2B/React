@@ -1,10 +1,11 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { AccountModel } from '@/domain/models/account-model'
 
 export type AuthenticationParams = {
-    email: string,
-    password: String
+  email: string
+  password: String
 }
 
 export interface Authentication {
-    auth(params: AuthenticationParams): Promise<AccountModel>
+  auth(params: AuthenticationParams): Promise<AccountModel>
 }
