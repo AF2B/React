@@ -1,5 +1,5 @@
-const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path')
 
 module.exports = {
   mode: 'development',
@@ -10,7 +10,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', 'scss'],
+    extensions: ['.ts', '.tsx', '.js', '.scss'],
     alias: {
       '@': path.join(__dirname, 'src')
     }
@@ -24,28 +24,32 @@ module.exports = {
       test: /\.scss$/,
       use: [{
         loader: 'style-loader'
-      },
-      {
+      }, {
         loader: 'css-loader',
         options: {
           modules: true
         }
-      },
-      {
+      }, {
         loader: 'sass-loader'
       }]
     }]
   },
   devServer: {
-    contentBase: './public',
-    writeToDisk: true,
-    historyApiFallback: true
+    static: './public',
+    devMiddleware: {
+      writeToDisk: true
+    },
+    historyApiFallback: {
+      rewrites: [
+        { from: /./, to: '/index.html' }
+      ]
+    }
   },
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM'
   },
-  plugin: [
+  plugins: [
     new CleanWebpackPlugin()
   ]
 }
