@@ -1,4 +1,4 @@
-| id | nome-dependencia                    | versao  | descrição-objetiva                   | mais informacao se necessario                      |
+| id | nome-dependencia                    | versao  | descrição-objetiva                   | more                      |
 |----|-------------------------------------|---------|--------------------------------------|----------------------------------------------------|
 | 1  | @types/axios                        | ^0.14.0 | Tipagens para Axios                  |                                                    |
 | 2  | @types/faker                        | ^4.1.11 | Tipagens para Faker                  |                                                    |
